@@ -75,11 +75,11 @@ function send(nachricht){
  
 function createStates(personen){
     
-    createState(pfad +'Anwesend', 99, {read:true, write:true, type:'number', desc:'Anzahl Personen anwesend'});
-    createState(pfad +'Abwesend', 99, {read:true, write:true, type:'number', desc:'Anzahl Personen abwesend'});
+    createState(pfad +'Anwesend', 99, {read:true, write:false, type:'number', desc:'Anzahl Personen anwesend'});
+    createState(pfad +'Abwesend', 99, {read:true, write:false, type:'number', desc:'Anzahl Personen abwesend'});
  
     personen.person.forEach(function(person){
-        createState(pfad + person.name, false, {read:true, write:true, type:'boolean', def:false, desc:'Anwesenheitsstatus von '+ person.name});    
+        createState(pfad + person.name, false, {read:true, write:false, type:'boolean', def:false, desc:'Anwesenheitsstatus von '+ person.name});    
     });
  
 }
